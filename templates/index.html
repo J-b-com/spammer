@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Message Detector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+        }
+        @keyframes logo-bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 min-h-screen flex items-center justify-center">
+    <div class="text-center">
+        <div class="flex justify-center items-center mb-6">
+            <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg animate-logo-bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-9 13V10m-6 13h12" />
+                </svg>
+            </div>
+        </div>
+        <h1 class="text-4xl font-bold text-white mb-4">Spam Message Detector</h1>
+        <form action="/predict" method="post" class="glass-effect p-6 max-w-md mx-auto">
+            <label for="message" class="block text-lg font-medium text-white mb-2">Enter your message:</label>
+            <textarea id="message" name="message" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none"></textarea>
+            <button type="submit" class="mt-4 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">Check for Spam</button>
+        </form>
+    </div>
+</body>
+</html>
